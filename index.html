@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101114" />
+  <title>GTA 6 LITE — Five Star Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="splash-orbit orbit-one"></div><div class="splash-orbit orbit-two"></div>
+    <div class="splash-content"><div class="star-mark">✳</div><div class="splash-label">A FIVE STAR GAMES PRODUCTION</div><div class="splash-title">FIVE STAR<span> GAMES</span></div><div class="splash-line"></div><div class="splash-foot">PRESENTS &nbsp;·&nbsp; AN OPEN CITY STORY</div></div>
+    <div class="splash-bottom">FICTIONAL GAME WORLD &nbsp; / &nbsp; PLAYER ONE</div>
+  </div>
+  <main id="onboarding" class="onboarding hidden">
+    <div class="onboard-art"><div class="art-sky"></div><div class="art-sun"></div><div class="art-city city-back"></div><div class="art-city city-front"></div><div class="art-road"></div><div class="art-car">✦</div><div class="art-copy"><span class="eyebrow">FIVE STAR GAMES &nbsp;·&nbsp; ORIGINAL CITY SANDBOX</span><h1>THE CITY<br>IS <em>YOURS.</em></h1><p>Two lives. One city. Your next move is up to you.</p><div class="art-coordinates">34° 03' 08.4" N &nbsp; 118° 14' 37.2" W</div></div><div class="art-stamp">VOL.<br><b>06</b></div></div>
+    <section class="onboard-panel">
+      <div class="brand-row"><span class="brand-icon">✳</span><span>FIVE STAR <b>GAMES</b></span><span class="panel-live"><i></i> SYSTEM READY</span></div>
+      <div id="verifyView" class="flow-view">
+        <div class="step-count">01 <span>/ 02</span></div><div class="eyebrow">BEFORE YOU ENTER</div><h2>Make it official.</h2><p class="muted">This experience is designed for adults. Verify your age to continue.</p>
+        <div class="verify-card"><div class="card-head"><span>01</span><div><b>Email + date of birth</b><small>For players who want to add an email</small></div><span class="optional">OPTIONAL</span></div><input id="emailInput" type="email" autocomplete="email" placeholder="you@example.com" /><div class="dob-label">DATE OF BIRTH</div><div class="dob-grid"><input id="day1" inputmode="numeric" placeholder="DD" maxlength="2" /><input id="month1" inputmode="numeric" placeholder="MM" maxlength="2" /><input id="year1" inputmode="numeric" placeholder="YYYY" maxlength="4" /></div><button id="verifyEmail" class="primary-button">VERIFY &amp; CONTINUE <span>↗</span></button></div>
+        <div class="or-divider"><span>OR</span></div>
+        <div class="verify-card dark-card"><div class="card-head"><span>02</span><div><b>Date of birth only</b><small>No email needed. Just your birthday.</small></div><span class="lock-icon">◈</span></div><div class="dob-grid"><input id="day2" inputmode="numeric" placeholder="DD" maxlength="2" /><input id="month2" inputmode="numeric" placeholder="MM" maxlength="2" /><input id="year2" inputmode="numeric" placeholder="YYYY" maxlength="4" /></div><button id="verifyDob" class="outline-button">ENTER THE CITY <span>→</span></button></div>
+        <div id="ageMessage" class="age-message" role="alert"></div><div class="privacy-note">◈ &nbsp; Your birthday stays on this device. No account required.</div>
+      </div>
+      <div id="countryView" class="flow-view hidden"><div class="step-count">02 <span>/ 02</span></div><div class="eyebrow">CHOOSE YOUR WORLD</div><h2>Pick your city.</h2><p class="muted">Eight real-world inspired regions. Your choice sets the language and home district.</p><div id="countryGrid" class="country-grid"></div><div class="country-note">⌖ &nbsp; Each region has its own home safehouse.</div></div>
+      <div class="onboard-footer"><span>GTA 6 LITE <i>•</i> BUILD 0.6.1</span><span>© FIVE STAR GAMES</span></div>
+    </section>
+  </main>
+  <main id="game" class="game hidden">
+    <header class="topbar"><div class="top-brand"><span class="brand-icon">✳</span><span>FIVE STAR <b>GAMES</b></span><span class="edition">CITY EDITION</span></div><div class="top-center"><span class="status-pip"></span><span id="regionLabel">LOS SANTOS, USA</span><span class="top-separator">/</span><span id="districtLabel">VESPUCCI CANALS</span></div><div class="top-right"><span class="live-clock" id="clock">--:--</span><button class="icon-btn" id="settingsBtn" title="Settings">⚙</button></div></header>
+    <section class="game-layout"><div class="world-shell"><canvas id="world" aria-label="Playable city sandbox"></canvas><div class="world-vignette"></div><div class="scene-tag"><span class="scene-dot"></span><span id="sceneLabel">VESPUCCI · DAYLIGHT</span></div><div class="world-weather"><span id="weatherIcon">☀</span><span id="weatherLabel">CLEAR SKIES</span></div><div id="interactHint" class="interact-hint hidden"><span class="keycap">E</span><span id="hintText">INTERACT</span></div>
+      <div class="hud-top-left"><div class="character-chip"><div class="avatar-mini" id="activeAvatar">L</div><div><b id="activeName">LUCIA</b><small id="activeRole">THE DRIVER</small></div><span class="health-heart">♥</span></div><div class="health-bar"><i id="healthBar"></i></div><div class="cash-row"><span>WALLET</span><b id="cashValue">$ 2,450</b></div></div>
+      <div class="hud-top-right"><div class="wanted-stars" id="wantedStars">☆☆☆☆☆☆☆☆☆☆</div><div class="speed-card"><div class="speed-number" id="speedNumber">00</div><div class="speed-unit">KM/H <span>·</span> <b id="gearLabel">ON FOOT</b></div></div></div>
+      <div class="hud-bottom-left"><div class="minimap-frame"><canvas id="minimap" width="180" height="180"></canvas><span class="map-north">N</span><span class="map-label">VESPUCCI</span></div><div class="gps-row"><span class="gps-pin">◆</span><span id="gpsLabel">SAFEHOUSE</span><small id="gpsDistance">0.4 KM</small></div></div>
+      <div class="hud-bottom-right"><div class="character-switch"><button class="switch-avatar active" id="switchLucia" title="Switch to Lucia"><span class="avatar-art avatar-lucia">L</span><span>LUCIA</span></button><button class="switch-avatar" id="switchJason" title="Switch to Jason"><span class="avatar-art avatar-jason">J</span><span>JASON</span></button></div><div class="quick-actions"><button id="phoneBtn"><span>▣</span> PHONE <kbd>P</kbd></button><button id="voiceBtn"><span>◉</span> VOICE <kbd>V</kbd></button></div></div>
+      <div class="control-tip"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE &nbsp; <kbd>E</kbd> INTERACT &nbsp; <kbd>C</kbd> CAMERA &nbsp; <kbd>SPACE</kbd> BRAKE</div>
+      <div class="camera-badge"><span>CAM</span><b id="cameraMode">THIRD PERSON</b><span class="camera-count">03 / 05</span><button id="cameraBtn">↻</button></div>
+      <div class="toast" id="toast"></div><div class="big-dialogue hidden" id="dialogue"><span class="dialogue-label">CITY VOICE · <b id="dialogueName">LUCIA</b></span><p id="dialogueText">Let's go.</p></div>
+    </div>
+    <aside class="side-panel"><div class="panel-heading"><div><div class="eyebrow">YOUR STORY, YOUR PACE</div><h2 id="welcomeTitle">Good afternoon, Lucia.</h2></div><button id="refreshWeather" class="refresh-btn" title="Refresh live weather">↻</button></div><div class="weather-card"><div class="weather-main"><span class="weather-big" id="weatherBig">☀</span><div><b id="temperature">24°</b><span id="weatherLong">CLEAR · VESPUCCI</span></div></div><div class="weather-meta"><span>LOCAL TIME <b id="localTime">--:--</b></span><span>DATE <b id="localDate">--- --</b></span></div><div class="weather-source" id="weatherSource">LOCAL WORLD CLOCK</div></div>
+      <div class="mission-head"><span>ACTIVITY BOARD</span><button id="allActivities">ALL ACTIVITIES ↗</button></div><div class="mission-list"><button class="mission-card" data-action="race"><span class="mission-icon pink">⌁</span><span><b>PINK SLIP SPRINT</b><small>Mixed-terrain · win up to $1,200</small></span><span class="mission-arrow">↗</span></button><button class="mission-card" data-action="showroom"><span class="mission-icon orange">◇</span><span><b>THE MOTOR CLUB</b><small>Five custom rides on display</small></span><span class="mission-arrow">↗</span></button><button class="mission-card" data-action="safehouse"><span class="mission-icon lilac">⌂</span><span><b>SAFEHOUSE</b><small>Rest, recharge &amp; reset</small></span><span class="mission-arrow">↗</span></button><button class="mission-card" data-action="hospital"><span class="mission-icon blue">✚</span><span><b>ST. FIACRE CLINIC</b><small>Care that comes at a cost</small></span><span class="mission-arrow">↗</span></button></div>
+      <div class="world-services"><span>AROUND THE BLOCK</span><div><button data-action="phone">▣<small>PHONE</small></button><button data-action="police">✧<small>POLICE</small></button><button data-action="garage">◈<small>WASH</small></button><button data-action="map">⌖<small>MAP</small></button></div></div><div class="panel-bottom"><span><i></i> CITY SIMULATION ACTIVE</span><span>DAY 01 · FREE ROAM</span></div></aside></section>
+    <footer class="game-footer"><span><b>✳</b> LOS SANTOS STORIES</span><span id="footerMessage">A quiet moment before the city wakes.</span><span>WASD TO MOVE &nbsp; · &nbsp; <kbd>?</kbd> HELP</span></footer>
+  </main>
+  <div id="modalRoot" class="modal-root hidden"><div class="modal-scrim" id="modalScrim"></div><section class="modal-card" id="modalCard" role="dialog" aria-modal="true"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+  <script src="game.js"></script>
+</body>
+</html>
